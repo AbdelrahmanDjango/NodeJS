@@ -12,6 +12,8 @@ app.get('/api/members/', (req,res) => {
 
 // But this line, using logger in specify function.
 app.get('/api/members/:id', logger, (req, res) => {
+// Filter is a function takes member parameter (or any name, I can put 7amada.id).
+// And make validation (id of object ?= id in route).
     res.json(members.filter(member => member.id === parseInt(req.params.id)));
 });
 
